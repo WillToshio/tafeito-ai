@@ -1,9 +1,12 @@
 Release -> Iniciando o projeto Tafeito
 
 # Tarefas:
-   [ok] - Montar o projeto no github
+   [ok] Montar o projeto no github
 
-   [ok] - Iniciar o project base com as bibliotecas essenciais
+   [ok] Iniciar o project base com as bibliotecas essenciais
+        - React app (base)
+        - React Router
+        - MUI (interface)
 
    [] - Fazer a tela de login
 
