@@ -1,9 +1,13 @@
 Release -> Iniciando o projeto Tafeito
+
 # Tarefas:
    [ok] - Montar o projeto no github
-    - Iniciar o project base com as bibliotecas essenciais
-    - Fazer a tela de login
-    - Conectar o login com o backend
+
+   [ok] - Iniciar o project base com as bibliotecas essenciais
+
+   [] - Fazer a tela de login
+
+   [] - Conectar o login com o backend
 
 ## Comandos
 ```
@@ -22,4 +26,5 @@ Release -> Iniciando o projeto Tafeito
 ```
 ## sites referentes
 [MaterialUI](https://mui.com/material-ui/getting-started/installation/)
+
 [ReactRouter](https://reactrouter.com/en/main)
