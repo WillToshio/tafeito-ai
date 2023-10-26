@@ -10,7 +10,12 @@ Release -> Iniciando o projeto Tafeito
 
    [ok] - Fazer a tela de login
 
-   [] - Conectar o login com o backend
+   [ok] - Conectar o login com o backend
+
+   [ok] - Atualizar a navegação entre as telas de login e tela de tarefas
+    - Realizar gestão do logado ou não da aplicação
+    - 
+
 
 ## Comandos
 ```
@@ -31,3 +36,7 @@ Release -> Iniciando o projeto Tafeito
 [MaterialUI](https://mui.com/material-ui/getting-started/installation/)
 
 [ReactRouter](https://reactrouter.com/en/main)
+
+## Cuidado
+error comentado e com o navigate sem a autenticação correta 
+*testando sem o servidor*
