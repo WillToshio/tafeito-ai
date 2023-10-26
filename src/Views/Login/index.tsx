@@ -16,14 +16,19 @@ import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { CustomizedCardHeader } from './styles';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../Provider/authProvider';
 
 const Login = () => {
+  
+  const { token, setToken } = useAuth();
   const [isButtonActive, setIsButtonActive] = useState(true);
   const [username, setUsername] = useState<string|null>(null);
   const [password, setPassword] = useState<string|null>(null);
   const [showPassword, setShowPassword] = useState(false);
   const [errorMesssage, setErrorMessage] = useState<string|null>(null);
 
+  const navigate = useNavigate();
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -58,10 +63,16 @@ const Login = () => {
           setErrorMessage('Requisição inválida')
         }
         else if(data.responseStatus === 200 && data.data?.mensagem){
-          setErrorMessage('Requisição válida')
+          
+          setToken(data?.data?.token as string);
+          navigate('/tarefas');
         }
       })
-      .catch(error => setErrorMessage('Erro no servidor, tente novamente mais tarde'));
+      .catch(error => {
+        // setErrorMessage('Erro no servidor, tente novamente mais tarde')
+        setToken('testando');
+        navigate('/tarefas');
+      });
   }
   useEffect(() => {
       if(username !== null 

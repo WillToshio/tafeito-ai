@@ -1,12 +1,16 @@
-import React from 'react';
-import './App.css';
-import Login from './Views/Login';
-
+import React, { ReactNode, useState } from "react";
+import "./App.css";
+import AuthProvider from "./Provider/authProvider";
+import Routes from "./routes";
 
 function App() {
+  
+
   return (
     <div className="App">
-        <Login />
+      <AuthProvider>
+          <Routes />
+      </AuthProvider>
     </div>
   );
 }
