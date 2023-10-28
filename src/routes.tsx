@@ -1,18 +1,18 @@
 import * as React from "react";
 import { createRoot } from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider
+import {  
+    createBrowserRouter,
+    RouterProvider,
+    Route,
+    Link,
 } from "react-router-dom";
 import ProtectedRoute from "./Provider/protectedRoute";
 import Login from './Views/Login';
-import { useAuth } from './Provider/authProvider';
 import Task from './Views/Task';
 import App from './App';
 
 const Routes = () =>{
     
-    const { token } = useAuth();
 
     const unAuthenticatedRoutes = [
         {
@@ -35,8 +35,8 @@ const Routes = () =>{
     ]
 
     const routes = createBrowserRouter([
-        ...(!token ? unAuthenticatedRoutes : []),
-        ...(token ? authenticatedRoutes: [])
+        ...unAuthenticatedRoutes,
+        ...authenticatedRoutes
     ])
         
     return <RouterProvider router={routes} />

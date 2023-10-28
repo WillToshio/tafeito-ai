@@ -29,6 +29,8 @@ const Login = () => {
   const [errorMesssage, setErrorMessage] = useState<string|null>(null);
 
   const navigate = useNavigate();
+ 
+
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -65,15 +67,20 @@ const Login = () => {
         else if(data.responseStatus === 200 && data.data?.mensagem){
           
           setToken(data?.data?.token as string);
-          navigate('/tarefas');
         }
       })
       .catch(error => {
         // setErrorMessage('Erro no servidor, tente novamente mais tarde')
         setToken('testando');
-        navigate('/tarefas');
       });
   }
+
+  useEffect(() => {
+    if(token){
+      navigate('/tarefas', {replace: true});
+    }
+  }, [token]);
+
   useEffect(() => {
       if(username !== null 
         && username !== '' 
